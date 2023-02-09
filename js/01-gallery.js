@@ -1,19 +1,21 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-console.log(galleryItems);
 const container = 'gallery';
 const galleryEl = document.querySelector(`.${container}`);
 
-galleryEl.innerHTML = galleryItems.reduce(
-  (arr, { preview, original, description }) =>
-    `${arr}\n
+const createGallery = ({ gallery, container }) =>
+  (gallery.innerHTML = galleryItems.reduce(
+    (arr, { preview, original, description }) =>
+      `${arr}\n
         <a class='${container}__item ${container}__link' href='${original}'>
-            <img class='${container}__image' src='${preview}' alt='${description} width='320px'>
+            <img class='${container}__image' src='${preview}' alt='${description}' width='320px'>
         </a>
     `,
-  ''
-);
+    ''
+  ));
+
+createGallery({ gallery: galleryEl, container: container });
 
 galleryEl.onclick = e => {
   e.preventDefault();
