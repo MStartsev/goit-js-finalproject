@@ -68,6 +68,12 @@ class BasicLightGallery {
         }
       );
 
+      function closeModal(e) {
+        if (e.code === "Escape") {
+          modal.close();
+        }
+      }
+
       modal.show(e);
     } catch (error) {
       console.error(
@@ -76,12 +82,6 @@ class BasicLightGallery {
         "color: orange",
         "color: #0075ff"
       );
-    }
-
-    function closeModal(e) {
-      if (e.code === "Escape") {
-        modal.close();
-      }
     }
   }
 
