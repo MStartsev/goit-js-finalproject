@@ -1,25 +1,25 @@
-import { galleryItems } from './gallery-items.js';
-// Change code below this line
+import { galleryItems } from "./gallery-items.js";
 
-const galleryName = 'gallery';
-const galleryEl = document.querySelector(`.${galleryName}`);
+const galleryName = "gallery";
+const galleryContainer = document.querySelector(`.js-${galleryName}`);
 
-const createGallery = ({ gallery, galleryName }) =>
-  (gallery.innerHTML = galleryItems.reduce(
+const createGallery = ({ container, name }) =>
+  (container.innerHTML = galleryItems.reduce(
     (arr, { preview, original, description }) =>
       `${arr}\n
-        <a class='${galleryName}__item ${galleryName}__link' href='${original}'>
-            <img class='${galleryName}__image' src='${preview}' alt='${description}' width='320px'>
+      <li class='${name}__item'>
+        <a class='${name}__link' href='${original}'>
+            <img class='${name}__image' src='${preview}' alt='${description}' width='320' height='240'>
         </a>
-    `,
-    ''
+      </li>`,
+    ""
   ));
 
-createGallery({ gallery: galleryEl, galleryName: galleryName });
+createGallery({ container: galleryContainer, name: galleryName });
 
-new SimpleLightbox('.gallery__item', {
+new SimpleLightbox(".gallery__link", {
   captionDelay: 250,
-  captionsData: 'alt',
+  captionsData: "alt",
   fadeSpeed: 250,
   scrollZoom: false,
 });

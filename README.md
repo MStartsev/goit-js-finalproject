@@ -1,1 +1,3 @@
-# goit-js-hw-07
+# Tier 1. JavaScript Fundamentals: From Basics to Advanced Concepts
+
+Final project

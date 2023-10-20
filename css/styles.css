@@ -3,7 +3,8 @@
   --animation-duration: 250ms;
 }
 
-.gallery {
+.gallery,
+.js-gallery {
   display: grid;
   max-width: 1140px;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -27,8 +28,9 @@
 }
 
 .gallery__image {
-  height: 100%;
-  width: 100%;
+  display: block;
+  height: 240px;
+  width: 370px;
   object-fit: cover;
   transition: transform var(--animation-duration) var(--timing-function);
 }
